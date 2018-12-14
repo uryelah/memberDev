@@ -283,6 +283,11 @@ h1 {
   font-size: 3.25em;
 }
 
+.pd-10 {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
 h1:after {
   content: "";
   margin: 0;
