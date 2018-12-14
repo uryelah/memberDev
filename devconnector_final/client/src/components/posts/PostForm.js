@@ -49,7 +49,9 @@ class PostForm extends Component {
     return (
       <div className="post-form mb-3">
         <div className="card">
-          <div className="card-header">Say Something...</div>
+          <div className="card-header">
+            What's on your mind (in 300 characters max)?
+          </div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
