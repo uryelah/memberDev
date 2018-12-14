@@ -76,11 +76,6 @@ class Navbar extends Component {
           </Link>
         </li>
         <li className="nav-item inverse">
-          <Link className="nav-link inverse" to={profilehand}>
-            Profile
-          </Link>
-        </li>
-        <li className="nav-item inverse">
           <a
             href=""
             onClick={this.onLogoutClick.bind(this)}
