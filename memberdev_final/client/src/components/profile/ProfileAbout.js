@@ -6,10 +6,10 @@ class ProfileAbout extends Component {
   render() {
     const { profile } = this.props;
 
-    // Get first name
+    
     const firstName = profile.user.name.trim().split(" ")[0];
 
-    // Skill List
+    
     const skills = profile.skills.map((skill, index) => (
       <div key={index} className="p-3">
         <i className="fa fa-check" /> {skill}

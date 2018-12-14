@@ -24,7 +24,7 @@ router.get('/test', (req, res) => res.json({ msg: 'Users Works' }));
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
-  // Check Validation
+  
   if (!isValid) {
     return res.status(400).json(errors);
   }
@@ -35,9 +35,9 @@ router.post('/register', (req, res) => {
       return res.status(400).json(errors);
     } else {
       const avatar = gravatar.url(req.body.email, {
-        s: '200', // Size
-        r: 'pg', // Rating
-        d: 'mm' // Default
+        s: '200', 
+        r: 'pg', 
+        d: 'mm' 
       });
 
       const newUser = new User({
@@ -67,7 +67,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
-  // Check Validation
+  
   if (!isValid) {
     return res.status(400).json(errors);
   }
@@ -75,21 +75,21 @@ router.post('/login', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  // Find user by email
+  
   User.findOne({ email }).then(user => {
-    // Check for user
+    
     if (!user) {
       errors.email = 'User not found';
       return res.status(404).json(errors);
     }
 
-    // Check Password
+    
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        // User Matched
-        const payload = { id: user.id, name: user.name, avatar: user.avatar }; // Create JWT Payload
+        
+        const payload = { id: user.id, name: user.name, avatar: user.avatar }; 
 
-        // Sign Token
+        
         jwt.sign(
           payload,
           keys.secretOrKey,

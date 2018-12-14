@@ -44,11 +44,11 @@ class Navbar extends Component {
     if (profile === null || loading) {
       profilehand = "/profile/" + "saracha";
     } else {
-      // Check if logged in user has profile data
+      
       if (Object.keys(profile).length > 0) {
         profilehand = "/profile/" + profile.handle;
       } else {
-        // User is logged in but has no profile
+        
         dashboardContent = (
           <div>
             <div class="full-blue-transition" />
