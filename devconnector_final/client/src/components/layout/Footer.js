@@ -1,9 +1,12 @@
-import React from 'react';
+import React from "react";
 
 export default () => {
   return (
-    <footer className="bg-dark text-white mt-5 p-4 text-center">
-      Copyright &copy; {new Date().getFullYear()} DevConnector
+    <footer className="inverse mt-5 p-4">
+      <span className="inverse">Copyright</span>{" "}
+      <span className="inverse">&copy;</span>{" "}
+      <span className="inverse">{new Date().getFullYear()}</span>{" "}
+      <span className="inverse">MemberDev</span>
     </footer>
   );
 };

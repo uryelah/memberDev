@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class ProfileGithub extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clientId: '26c196bacea7db10cf48',
-      clientSecret: '0885cb690e07d2a93a6afb0891fb552fd9f7aa53',
+      clientId: "1347ddaac57adca80a85",
+      clientSecret: "bad95be4d6a06065c99eb87ff4ef4e3ea7c8439a",
       count: 5,
-      sort: 'created: asc',
+      sort: "created: asc",
       repos: []
     };
   }
@@ -34,11 +34,16 @@ class ProfileGithub extends Component {
     const { repos } = this.state;
 
     const repoItems = repos.map(repo => (
-      <div key={repo.id} className="card card-body mb-2">
+      <div key={repo.id} className="card card-body mb=2">
         <div className="row">
           <div className="col-md-6">
             <h4>
-              <Link to={repo.html_url} className="text-info" target="_blank">
+              <Link
+                to={repo.html_url}
+                className="text-info"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {repo.name}
               </Link>
             </h4>
@@ -51,7 +56,7 @@ class ProfileGithub extends Component {
             <span className="badge badge-secondary mr-1">
               Watchers: {repo.watchers_count}
             </span>
-            <span className="badge badge-success">
+            <span className="badge badge-success mr-1">
               Forks: {repo.forks_count}
             </span>
           </div>

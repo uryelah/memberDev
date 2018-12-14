@@ -2,14 +2,532 @@ img {
   width: 100%;
 }
 
+body {
+  background-color: #000099;
+  color: #ccc;
+  font-size: 14pt;
+  font-family: "courier", "courier New";
+}
+
+pre {
+  color: #ccc;
+  position: absolute;
+  bottom: 50px;
+  left: 25%;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  animation: waver 2s ease-in-out infinite both !important;
+}
+
+.overlay-center {
+  position: fixed;
+  z-index: -1;
+  top: 180px;
+  width: 100%;
+  height: 100px;
+  opacity: 2%;
+  background-color: #0000ff9f;
+  background-blend-mode: multiply;
+  animation: screenflicklecenter 0.7s linear infinite;
+  animation-fill-mode: both;
+}
+
+.input-group,
+.form-group,
+.form-control {
+  z-index: 200;
+}
+
+input {
+  z-index: 100;
+}
+
+@keyframes screenflicklecenter {
+  0% {
+    height: 100px;
+    opacity: 0;
+  }
+  5.9% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 2%;
+  }
+  8% {
+    opacity: 1%;
+  }
+  8.1% {
+    opacity: 0;
+  }
+  14.9% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1%;
+  }
+  18% {
+    opacity: 2%;
+  }
+  18.1% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  26% {
+    opacity: 2%;
+  }
+  29% {
+    opacity: 0;
+  }
+
+  49% {
+    opacity: 0;
+    z-index: 2;
+    transform: translateY(50px);
+  }
+  50% {
+    opacity: 2%;
+    height: 200px;
+    z-index: 2;
+  }
+  52% {
+    opacity: 0;
+    z-index: -1;
+  }
+  59.1% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 2%;
+  }
+  64.9% {
+    opacity: 1%;
+  }
+  65% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.6%;
+  }
+
+  90% {
+    opacity: 1%;
+    height: 100px;
+    transform: translateY(250px);
+  }
+  100% {
+    transform: translateY(300px);
+  }
+}
+
+.overlay-static {
+  position: fixed;
+  z-index: 20;
+  top: 70px;
+  width: 100%;
+  height: 50px;
+  opacity: 20%;
+  background-color: #0000ff9f;
+  background-blend-mode: multiply;
+  animation: screenflickle 1s linear infinite;
+}
+
+.overlay-static:after {
+  position: fixed;
+  z-index: 20;
+  top: 70px;
+  width: 100%;
+  height: 75px;
+  opacity: 15%;
+  background-color: #0000ff9f;
+  background-blend-mode: multiply;
+  animation: screenflickle 1.1s linear both infinite;
+  animation-direction: alternate;
+  animation-delay: -0.3s;
+}
+
+.overlay-static:before {
+  position: fixed;
+  z-index: 20;
+  top: 200px;
+  width: 100%;
+  height: 45px;
+  opacity: 22%;
+  background-color: #0000ff9f;
+  background-blend-mode: multiply;
+  animation: screenflickle 1.1s linear both infinite;
+  animation-direction: alternate;
+  animation-delay: 1s;
+}
+
+@keyframes screenflickle {
+  0% {
+    transform: translateY(0);
+  }
+  9% {
+    opacity: 20%;
+  }
+  10% {
+    opacity: 0;
+  }
+  11% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 20%;
+  }
+  25% {
+    opacity: 20%;
+  }
+  26% {
+    opacity: 0;
+  }
+  27% {
+    opacity: 0;
+  }
+  28% {
+    opacity: 20%;
+  }
+  40% {
+    opacity: 20%;
+  }
+  40.1% {
+    opacity: 0;
+  }
+  42% {
+    opacity: 0;
+  }
+  42.5% {
+    opacity: 20%;
+  }
+  90% {
+    opacity: 20%;
+  }
+  90.5% {
+    opacity: 0;
+  }
+  91.5% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 20%;
+  }
+  100% {
+    transform: translateY(820px);
+  }
+}
+
+p,
+pre {
+  transform: translateX(10px);
+  text-shadow: 2px 2px 5px blue;
+  animation: shakeblur 2s;
+}
+
+@keyframes shakeblur {
+  0% {
+    color: rgb(177, 177, 177);
+  }
+  100% {
+    color: rgb(255, 255, 255);
+  }
+}
+
+.full-blue-transition {
+  height: 950px;
+  width: 100%;
+  background-color: #000099;
+  animation: charging 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes charging {
+  0% {
+    height: 950px;
+  }
+  97% {
+    height: 0;
+  }
+  100% {
+    height: 8px;
+  }
+}
+
+.bg-info,
+.card-header {
+  border-radius: 0;
+  border: 0;
+  color: #ccc;
+  background-color: #000099;
+}
+
+.container {
+  padding: 0;
+  margin: 0 auto;
+}
+
+h1 {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+
+.display-3 {
+  font-size: 3.25em;
+}
+
+h1:after {
+  content: "";
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  /* Remove display: inline-block if not required to be on the same line as text etc */
+  display: inline-block;
+  background-color: #ccc;
+  border: 1px solid #000099;
+  vertical-align: top;
+  width: 20px;
+  /* Set height to the line height of .text */
+  height: 52px;
+  animation: blink 2s step-end infinite;
+}
+
+h1:hover,
+p:hover {
+  background-color: #ccc;
+  color: #000099;
+  animation: flicker-inverse 1s linear;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn,
+span,
+li,
+p {
+  animation: flicker 1s linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  border-bottom: 1px solid #000099;
+  border-top: 1px solid #000099;
+}
+
+footer {
+  z-index: 10;
+}
+
+.feed {
+  z-index: 11;
+}
+
+footer span,
+li.inverse,
+ul.inverse {
+  animation: flicker-inverse 0.9s linear infinite;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  animation-delay: -0.5;
+}
+
+@keyframes flicker {
+  0% {
+    color: #ccc;
+  }
+  43.5% {
+    color: #ccc;
+  }
+  45% {
+    color: #000099;
+  }
+  45.1% {
+    color: #ccc;
+  }
+  98% {
+    color: #ccc;
+  }
+  100% {
+    color: #000099;
+  }
+}
+@keyframes flicker-inverse {
+  0% {
+    color: #000099;
+  }
+  43.5% {
+    color: #000099;
+  }
+  45% {
+    color: #ccc;
+  }
+  45.1% {
+    color: #000099;
+  }
+  98% {
+    color: #000099;
+  }
+  100% {
+    color: #ccc;
+  }
+}
+@keyframes flicker-inverse-bg {
+  0% {
+    background-color: #ccc;
+  }
+  43.5% {
+    background-color: #ccc;
+  }
+  45% {
+    background-color: #000099;
+  }
+  45.1% {
+    background-color: #ccc;
+  }
+  98% {
+    background-color: #ccc;
+  }
+  100% {
+    background-color: #000099;
+  }
+}
+
+.btn,
+.bg-dark,
+.btn-danger,
+.btn-info,
+.btn-light {
+  background-color: #000099;
+  color: #ccc;
+  border-radius: 0;
+  border: none;
+}
+
+.inverse {
+  background-color: #ccc;
+  color: #000099;
+  border-radius: 0;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+
+.inverse:hover {
+  background-color: #000099;
+  color: #ccc;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+
+.btn:hover {
+  background-color: #ccc;
+  color: #000099;
+}
+
 .landing {
+  z-index: -300;
+}
+
+.landing,
+.feed,
+.dashboard,
+.profiles,
+.blue-bg,
+.login,
+.register {
   position: relative;
-  background: url('./img/showcase.jpg') no-repeat;
-  background-size: cover;
+  top: 50px;
+  background: url("./img/back_blue_terminal.png") no-repeat;
+  background-size: contain;
+  max-height: 850px;
   background-position: center;
   height: 100vh;
   margin-top: -24px;
   margin-bottom: -50px;
+  animation: waver 5s ease-in-out infinite both;
+}
+@keyframes waver {
+  0% {
+    transform: translateX(0.5px);
+  }
+  49% {
+    transform: translateX(0.5px);
+  }
+  50% {
+    transform: translateX(-0.5px);
+  }
+  99% {
+    transform: translateX(-0.5px);
+  }
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.nav {
+  text-align: left;
+}
+
+.card-form,
+.card {
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+}
+
+input,
+.form-control,
+.list-group,
+.list-group-item {
+  background-color: #000099;
+  color: #000099;
+  border-radius: 0;
+  border: 1px solid #ccc;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+input:hover,
+.form-control:hover,
+.list-group:hover,
+.list-group-item:hover {
+  background-color: #ccc;
+  color: #000099;
+  border-radius: 0;
+  border: none;
+  width: 100%;
+  left: 0;
+  right: 0;
+  animation: flicker-inverse-bg 0.3s linear infinite;
+}
+
+.input-group {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
 }
 
 .landing-inner {
@@ -17,7 +535,6 @@ img {
 }
 
 .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
   left: 0;
@@ -36,4 +553,58 @@ img {
 
 .form-control::placeholder {
   color: #bbb !important;
+}
+
+.card,
+.card .form-group {
+  margin-top: 50px;
+  border: 1px solid #ccc;
+  background-color: #000099;
+}
+
+.text {
+  position: absolute;
+  display: inline-block;
+  line-height: 24px;
+  font-size: 48px;
+  color: #ccc;
+  min-width: 360px;
+  margin: 0 auto;
+}
+
+.text::after {
+  content: "";
+  position: relative;
+  top: -15px;
+  right: -15px;
+  /* Remove display: inline-block if not required to be on the same line as text etc */
+  display: inline-block;
+  background-color: #ccc;
+  border: 1px solid #000099;
+  vertical-align: top;
+  width: 20px;
+  /* Set height to the line height of .text */
+  height: 48px;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blue-bg {
+  width: 150%;
+  height: 950px;
+  background-color: #000099;
+  position: absolute;
+  margin: 0 auto;
+  padding: 400px;
 }
